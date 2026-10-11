@@ -1,5 +1,5 @@
 
-⚠️ WIP / Public Learning Project: This tool was built as a hands-on experiment to learn Rust, async networking, and JSON parsing. It works, but it's a living project that I am continuously refactoring as I level up my systems engineering skills.
+⚠️ WIP / Public Learning Project: This tool was built as a hands-on experiment to learn Rust, async networking, and JSON parsing. It works, but it's a living project that I am continuously refactoring as I level up my systems engineering skills. Contributions, feedback, and code critiques are always welcome!
 
 # ytm-play 🎵🦀
 
