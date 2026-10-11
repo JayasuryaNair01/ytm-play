@@ -21,3 +21,26 @@ Ensure you have the following installed on your system before running the binary
    ```bash
    git clone [https://github.com/JayasuryaNair01/ytm-play.git](https://github.com/JayasuryaNair01/ytm-play.git)
    cd ytm-play
+## Demo
+```text
+=== YTM-PLAY INITIALIZED ===
+
+----------------------------------------
+Enter song or artist to search (or type 'exit' to quit): synthwave
+[+] Searching for: "synthwave"
+
+[+] Found results:
+
+  1. Memories
+  2. Saiyaara X Saiyaara Synthwave | ROHAN | Indian Bollywood Synthwave
+  3. Nightcall
+  4. Synthwave Music for Focus, Background Music for Studying
+  5. In the Air Tonight
+  6. Before the Lights Went out (Instrumental)
+  7. DARK WAVE | BEST RECAP 2025 PLAYLIST MIX - Synthwave, Post-Punk
+  8. Alphaville - Forever Young (80's Synthwave Remix by Leslie Mag)
+  9. CircuitsFM Live #37: Midnight Protocol | Cinematic Synthwave Mix
+  10. CircuitsFM Live #38: Waking Sleeping Gods | Cinematic Synthwave Mix
+
+Enter track number to play (or 0 to search again):
+
