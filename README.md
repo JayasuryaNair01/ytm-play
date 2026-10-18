@@ -1,49 +1,39 @@
+# ytm-play
 
-⚠️ WIP / Public Learning Project: This tool was built as a hands-on experiment to learn Rust, async networking, and JSON parsing. It works, but it's a living project that I am continuously refactoring as I level up my systems engineering skills. Contributions, feedback, and code critiques are always welcome!
+A small terminal YouTube Music client I wrote in Rust while learning async
+networking and JSON parsing. It searches YouTube Music and plays the chosen
+track's audio through `mpv`. It's a hands-on learning project that I'm still
+refactoring.
 
-# ytm-play 🎵🦀
+## What it does
 
-A blazing-fast, terminal-based YouTube Music client written in Rust. 
+- Queries the YouTube Music internal (`innertube`) search API.
+- Parses the nested JSON response using `Option` combinators
+  (`and_then` / `or_else`) so missing fields don't panic.
+- Lists up to 10 results in a continuous search loop.
+- Plays the selected track's audio by launching `mpv --no-video`.
 
-Designed to query the YouTube Music internal API directly, parse deep nested JSON structures safely using functional option chaining, and stream audio locally using system commands.
-
-## Features
-- **Async HTTP Requests:** Built with `reqwest` and `tokio` for high-performance non-blocking network calls.
-- **Defensive JSON Parsing:** Utilizes Rust's pattern matching and `Option` combinators (`and_then`, `or_else`) to safely traverse complex, changing API payloads without risk of runtime panics.
-- **Interactive TUI Flow:** Continuous search loop with dynamic track selection.
-- **System Integration:** Seamlessly spawns external media processes (`mpv`) for lightweight audio playback.
+Built with `tokio` and `reqwest` (async), and `serde` / `serde_json` for parsing.
 
 ## Prerequisites
-Ensure you have the following installed on your system before running the binary:
-- **Rust & Cargo** (Latest stable toolchain)
-- **mpv** (Required for audio playback backend)
 
-### Installation & Usage
+- Rust and Cargo (latest stable toolchain)
+- `mpv` installed and on your PATH
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/JayasuryaNair01/ytm-play.git](https://github.com/JayasuryaNair01/ytm-play.git)
-   cd ytm-play
-## Demo
-```text
-=== YTM-PLAY INITIALIZED ===
+## Usage
 
-----------------------------------------
-Enter song or artist to search (or type 'exit' to quit): synthwave
-[+] Searching for: "synthwave"
+```bash
+git clone https://github.com/JayasuryaNair01/ytm-play.git
+cd ytm-play
+cargo run
+```
 
-[+] Found results:
+Type a song or artist at the prompt, pick a number to play, or `exit` to quit.
 
-  1. Memories
-  2. Saiyaara X Saiyaara Synthwave | ROHAN | Indian Bollywood Synthwave
-  3. Nightcall
-  4. Synthwave Music for Focus, Background Music for Studying
-  5. In the Air Tonight
-  6. Before the Lights Went out (Instrumental)
-  7. DARK WAVE | BEST RECAP 2025 PLAYLIST MIX - Synthwave, Post-Punk
-  8. Alphaville - Forever Young (80's Synthwave Remix by Leslie Mag)
-  9. CircuitsFM Live #37: Midnight Protocol | Cinematic Synthwave Mix
-  10. CircuitsFM Live #38: Waking Sleeping Gods | Cinematic Synthwave Mix
+## Limitations / notes
 
-Enter track number to play (or 0 to search again):
-
+- It relies on YouTube Music's internal API, which can change without notice
+  and may break parsing at any time.
+- The "artist" field is just the search query, not the real track artist.
+- No tests or error-recovery beyond skipping failed requests yet.
+- Built to learn Rust; expect rough edges.
